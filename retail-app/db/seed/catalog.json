@@ -1,0 +1,292 @@
+{
+  "products": [
+    {
+      "name": "Tie-Detail Smocked Top",
+      "category": "ladies",
+      "subcategory": "tops",
+      "price": 1299,
+      "description": "Airy cotton top with a smocked bodice and tie detail at the neckline.",
+      "image": "01-tie-detail-smocked-top.avif",
+      "stock": {
+        "bangalore": 50,
+        "new-york": 17
+      }
+    },
+    {
+      "name": "Lace-Inset Cotton Blouse",
+      "category": "ladies",
+      "subcategory": "tops",
+      "price": 2999,
+      "description": "Soft cotton blouse with delicate lace insets and a relaxed silhouette.",
+      "image": "02-lace-inset-cotton-blouse.avif",
+      "stock": {
+        "bangalore": 50,
+        "delhi": 24
+      }
+    },
+    {
+      "name": "Fitted T-Shirt",
+      "category": "ladies",
+      "subcategory": "tops",
+      "price": 800,
+      "description": "Everyday fitted T-shirt in stretch cotton jersey.",
+      "image": "03-fitted-t-shirt.avif",
+      "stock": {
+        "bangalore": 48,
+        "new-york": 31
+      }
+    },
+    {
+      "name": "Flared High Jeans",
+      "category": "ladies",
+      "subcategory": "new-arrivals",
+      "price": 1699,
+      "description": "High-waisted jeans with a flattering flare from the knee.",
+      "image": "04-flared-high-jeans.avif",
+      "stock": {
+        "bangalore": 49,
+        "delhi": 38
+      }
+    },
+    {
+      "name": "Wide High Waist Jeans",
+      "category": "ladies",
+      "subcategory": "new-arrivals",
+      "price": 1999,
+      "description": "Wide-leg jeans with a high waist and full-length hem.",
+      "image": "05-wide-high-waist-jeans.avif",
+      "stock": {
+        "bangalore": 50,
+        "new-york": 15
+      }
+    },
+    {
+      "name": "Tailored Linen-Blend Trousers",
+      "category": "ladies",
+      "subcategory": "new-arrivals",
+      "price": 2298.98,
+      "description": "Tailored trousers in a breathable linen blend with pressed creases.",
+      "image": "06-tailored-linen-blend-trousers.avif",
+      "stock": {
+        "delhi": 50,
+        "bangalore": 22
+      }
+    },
+    {
+      "name": "Relaxed Fit Resort Shirt",
+      "category": "men",
+      "subcategory": "shirts",
+      "price": 1499,
+      "description": "Relaxed fit resort shirt with a camp collar and short sleeves.",
+      "image": "07-relaxed-fit-resort-shirt.avif",
+      "stock": {
+        "delhi": 49,
+        "new-york": 29
+      }
+    },
+    {
+      "name": "Relaxed Fit Linen-Blend Resort Shirt",
+      "category": "men",
+      "subcategory": "shirts",
+      "price": 1999,
+      "description": "Linen-blend resort shirt cut for an easy, relaxed fit.",
+      "image": "08-relaxed-fit-linen-blend-resort-shirt.avif",
+      "stock": {
+        "delhi": 49,
+        "bangalore": 36
+      }
+    },
+    {
+      "name": "Short-Sleeved Oxford Shirt",
+      "category": "men",
+      "subcategory": "new-arrivals",
+      "price": 1349,
+      "description": "Short-sleeved Oxford shirt with a button-down collar.",
+      "image": "09-short-sleeved-oxford-shirt.avif",
+      "stock": {
+        "delhi": 44,
+        "new-york": 13
+      }
+    },
+    {
+      "name": "Straight Jeans",
+      "category": "men",
+      "subcategory": "jeans",
+      "price": 1999,
+      "description": "Classic five-pocket jeans with a straight leg.",
+      "image": "10-straight-jeans.avif",
+      "stock": {
+        "delhi": 50,
+        "bangalore": 20
+      }
+    },
+    {
+      "name": "Relaxed Fit Jeans",
+      "category": "men",
+      "subcategory": "jeans",
+      "price": 2300,
+      "description": "Relaxed fit jeans with a roomy seat and thighs.",
+      "image": "11-relaxed-fit-jeans.avif",
+      "stock": {
+        "delhi": 49,
+        "new-york": 27
+      }
+    },
+    {
+      "name": "Loose-Fit Cargos",
+      "category": "men",
+      "subcategory": "jeans",
+      "price": 2799,
+      "description": "Loose-fit cargo trousers with utility pockets.",
+      "image": "12-loose-fit-cargos.avif",
+      "stock": {
+        "bangalore": 47,
+        "delhi": 34
+      }
+    },
+    {
+      "name": "Printed T-Shirt",
+      "category": "kids",
+      "subcategory": "boys",
+      "price": 399,
+      "description": "Soft cotton T-shirt with a playful print.",
+      "image": "13-printed-t-shirt.avif",
+      "stock": {
+        "bangalore": 70,
+        "new-york": 11
+      }
+    },
+    {
+      "name": "Printed T-Shirt",
+      "category": "kids",
+      "subcategory": "baby",
+      "price": 399,
+      "description": "Gentle cotton T-shirt with a printed motif, made for little ones.",
+      "image": "14-printed-t-shirt.avif",
+      "stock": {
+        "bangalore": 50,
+        "delhi": 18
+      }
+    },
+    {
+      "name": "Wide Leg Paper Bag Jeans",
+      "category": "kids",
+      "subcategory": "girls",
+      "price": 1898.97,
+      "description": "Wide-leg jeans with a paper-bag waist and tie belt.",
+      "image": "15-wide-leg-paper-bag-jeans.avif",
+      "stock": {
+        "delhi": 50,
+        "new-york": 25
+      }
+    },
+    {
+      "name": "Regular Fit Printed Jeans",
+      "category": "kids",
+      "subcategory": "girls",
+      "price": 2799,
+      "description": "Regular fit jeans with an all-over print.",
+      "image": "16-regular-fit-printed-jeans.avif",
+      "stock": {
+        "delhi": 50,
+        "bangalore": 32
+      }
+    },
+    {
+      "name": "Minecraft x Lucid Jeans",
+      "category": "kids",
+      "subcategory": "boys",
+      "price": 4200,
+      "description": "Limited-edition jeans from the Minecraft x Lucid collaboration.",
+      "image": "17-minecraft-x-lucid-jeans.avif",
+      "stock": {
+        "bangalore": 48,
+        "new-york": 39
+      }
+    },
+    {
+      "name": "Reed Diffuser",
+      "category": "home",
+      "subcategory": "decor",
+      "price": 999,
+      "description": "Reed diffuser that gently scents any room.",
+      "image": "18-reed-diffuser.avif",
+      "stock": {
+        "delhi": 49,
+        "bangalore": 16
+      }
+    },
+    {
+      "name": "Scented Candle In Glass Holder",
+      "category": "home",
+      "subcategory": "decor",
+      "price": 999,
+      "description": "Scented candle poured into a reusable glass holder.",
+      "image": "19-scented-candle-in-glass-holder.avif",
+      "stock": {
+        "delhi": 48,
+        "new-york": 23
+      }
+    },
+    {
+      "name": "Glass Tealight Holder",
+      "category": "home",
+      "subcategory": "decor",
+      "price": 649,
+      "description": "Clear glass tealight holder for a soft glow.",
+      "image": "20-glass-tealight-holder.avif",
+      "stock": {
+        "bangalore": 47,
+        "delhi": 30
+      }
+    },
+    {
+      "name": "Mad For Matte Liquid Lipstick",
+      "category": "beauty",
+      "subcategory": "makeup",
+      "price": 599,
+      "description": "Long-wearing liquid lipstick with a velvety matte finish.",
+      "image": "21-mad-for-matte-liquid-lipstick.avif",
+      "stock": {
+        "delhi": 75,
+        "new-york": 37
+      }
+    },
+    {
+      "name": "Glow Pro Highlighter",
+      "category": "beauty",
+      "subcategory": "makeup",
+      "price": 699,
+      "description": "Buildable highlighter for a luminous glow.",
+      "image": "22-glow-pro-highlighter.avif",
+      "stock": {
+        "bangalore": 70,
+        "delhi": 14
+      }
+    },
+    {
+      "name": "Mystic Velvet Eau De Parfum",
+      "category": "beauty",
+      "subcategory": "fragrance",
+      "price": 799,
+      "description": "Warm eau de parfum with velvety amber notes.",
+      "image": "23-mystic-velvet-eau-de-parfum.avif",
+      "stock": {
+        "bangalore": 75,
+        "new-york": 21
+      }
+    },
+    {
+      "name": "Linen Bag",
+      "category": "beauty",
+      "subcategory": "skincare",
+      "price": 799,
+      "description": "Linen toiletry bag for travel and everyday essentials.",
+      "image": "24-linen-bag.avif",
+      "stock": {
+        "bangalore": 50,
+        "delhi": 28
+      }
+    }
+  ]
+}

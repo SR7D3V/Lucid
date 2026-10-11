@@ -1,0 +1,15 @@
+{
+  "name": "lucid",
+  "private": true,
+  "scripts": {
+    "dev": "npm --prefix retail-app run dev",
+    "build": "npm --prefix retail-app run build",
+    "start": "npm --prefix retail-app run start",
+    "lint": "npm --prefix retail-app run lint",
+    "typecheck": "npm --prefix retail-app run typecheck",
+    "test": "npm --prefix retail-app run test",
+    "db:setup": "npm --prefix retail-app run db:setup",
+    "db:migrate": "npm --prefix retail-app run db:migrate",
+    "db:seed": "npm --prefix retail-app run db:seed"
+  }
+}
