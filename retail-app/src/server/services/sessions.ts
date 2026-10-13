@@ -1,14 +1,12 @@
-import { createHash, randomBytes } from 'crypto';
 import type { Customer } from '@/lib/types';
 import { exec, one } from '../db';
+import { generateToken, hashToken } from './tokens';
 
 /** Session lifetimes; admin sessions are short-lived because they unlock the SQL console. */
 export const SESSION_TTL_SECONDS = { customer: 30 * 24 * 60 * 60, admin: 12 * 60 * 60 } as const;
 
-const hashToken = (token: string) => createHash('sha256').update(token).digest();
-
 export async function createSession(customerId: number, ttlSeconds: number) {
-  const token = randomBytes(32).toString('base64url');
+  const token = generateToken();
   await exec(
     `INSERT INTO sessions (token_hash, customer_id, expires_at)
      VALUES ($1, $2, now() + make_interval(secs => $3))`,
