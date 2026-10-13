@@ -113,6 +113,18 @@ export function clientIp(req: Request) {
   return chain[Math.max(0, chain.length - hops)];
 }
 
+/**
+ * The site's public origin for links sent outside the app (e.g. reset emails). Production uses the
+ * configured APP_ORIGIN only: deriving it from the Host header would let an attacker point a
+ * victim's reset link at their own domain.
+ */
+export function publicOrigin(req: Request) {
+  const { APP_ORIGIN, NODE_ENV } = env();
+  if (APP_ORIGIN) return new URL(APP_ORIGIN).origin;
+  if (NODE_ENV === 'production') throw new Error('APP_ORIGIN must be set to send links by email.');
+  return new URL(req.url).origin;
+}
+
 /** Parses a positive integer route param, throwing a 404 for anything else. */
 export function idParam(value: string) {
   const id = Number(value);
