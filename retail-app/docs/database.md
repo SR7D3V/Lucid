@@ -85,7 +85,7 @@ erDiagram
                   numeric unit_price }
 ```
 
-Supporting tables: `admin_audit_log` (who did what in the admin area, including every SQL
+Supporting tables: `password_reset_tokens` (hashed, single-use, 30-minute tokens), `admin_audit_log` (who did what in the admin area, including every SQL
 console query), `rate_limits` (an `UNLOGGED` fixed-window counter) and `schema_migrations`.
 
 ## Types and constraints
@@ -151,7 +151,7 @@ transaction as the status change.
 | `inventory_product_idx` | Stock per product (the `product_catalog` view) |
 | `orders_customer_idx (customer_id, placed_at DESC)` | Account order history |
 | `orders_status_idx (status, placed_at DESC)` | Admin order queue |
-| `sessions_expires_idx`, `carts_guest_updated_idx` | Housekeeping (`npm run db:prune`) |
+| `sessions_expires_idx`, `password_reset_tokens_expires_idx`, `carts_guest_updated_idx` | Housekeeping (`npm run db:prune`) |
 
 ## Read model
 
@@ -166,6 +166,10 @@ the admin SQL console.
   unknown emails still run a hash, so response timing doesn't reveal which emails exist.
 - Sessions use 256-bit random tokens. Only their SHA-256 is stored, so a database leak cannot be
   replayed as a login.
+- Password reset tokens are stored the same way. Each one is consumed with `DELETE ... RETURNING`,
+  so two concurrent uses of the same link cannot both succeed. A successful reset deletes every
+  session for the account, and the request endpoint responds identically whether or not the email
+  exists.
 - The SQL console connects as a separate login role (`lucid_console`) that is not a superuser, is
   read-only by default, and can only `SELECT` from the `console` schema. That schema is a set of views
   that leave out password hashes, session tokens, rate-limit state and the audit log. Each query runs

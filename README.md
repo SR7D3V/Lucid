@@ -32,6 +32,7 @@ The schema and design decisions are documented in [`retail-app/docs/database.md`
 - Per-store stock on every product page; the shopper picks the fulfilling store
 - Shopping bag stored on the server: works for guests and is merged into the account bag at sign-in
 - Checkout that splits the bag into one order per store, plus order history and cancellation (which restocks)
+- Password reset by email, using single-use links that expire after 30 minutes
 - Wishlist, account details, dark mode, and a responsive layout with a mobile menu
 
 **Admin**
@@ -43,6 +44,8 @@ The schema and design decisions are documented in [`retail-app/docs/database.md`
 
 **Security**
 - Scrypt password hashing and server-side sessions in httpOnly cookies (only token hashes are stored)
+- Password reset that doesn't reveal which emails are registered (identical responses and timing),
+  hashed single-use tokens, and sign-out on all devices after a reset
 - Role-based access, rate-limited login and registration, and same-origin checks on every write request
 - Nonce-based Content Security Policy, request size limits, and safe redirects after sign-in
 - The SQL console runs as a separate read-only database role that cannot see credentials or sessions,
@@ -84,7 +87,8 @@ npm run db:console-role               # optional: enables the admin SQL console
 npm run dev                           # http://localhost:3000
 ```
 
-Sign in with the `ADMIN_EMAIL` and `ADMIN_PASSWORD` from `.env.local`, then open `/admin`. To make an
+Sign in with the `ADMIN_EMAIL` and `ADMIN_PASSWORD` from `.env.local`, then open `/admin`. In
+development, password reset emails are printed to the terminal running `npm run dev`. To make an
 existing account an admin, run `npm run admin:promote -- someone@example.com`.
 
 ### Scripts
@@ -99,7 +103,7 @@ Run these inside `retail-app/`.
 | `npm run db:seed` | Seed stores, products, stock and the first admin (safe to re-run) |
 | `npm run db:reset` | Drop and recreate the schema (refuses to run in production) |
 | `npm run db:console-role` | Create the read-only role used by the SQL console |
-| `npm run db:prune` | Remove expired sessions, stale guest bags and old rate-limit records |
+| `npm run db:prune` | Remove expired sessions and reset tokens, stale guest bags and old rate-limit records |
 
 ## Project structure
 
@@ -137,7 +141,7 @@ The app runs on any Node.js host together with a managed PostgreSQL database.
 
 1. Create an application database role that is **not** a superuser, then create the console role with
    `npm run db:console-role`.
-2. Set the variables listed in `retail-app/.env.example`. In production, set `APP_ORIGIN` and
-   `TRUSTED_PROXY_HOPS` as well.
+2. Set the variables listed in `retail-app/.env.example`. In production, also set `APP_ORIGIN`,
+   `TRUSTED_PROXY_HOPS`, and `RESEND_API_KEY` with `MAIL_FROM` for password reset emails.
 3. Run `npm run db:migrate` on each release, and `npm run db:seed` once to create the first admin.
 4. Serve over HTTPS with `npm run build && npm start`, and schedule `npm run db:prune` to run daily.
