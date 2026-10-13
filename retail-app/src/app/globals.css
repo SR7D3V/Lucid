@@ -413,8 +413,25 @@ a {
   border-color: var(--foreground);
 }
 
+.auth-forgot {
+  align-self: flex-end;
+  margin-top: -1.25rem;
+  font-size: 0.75rem;
+  color: var(--muted);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.auth-message {
+  display: grid;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
 .auth-switch {
   display: block;
+  text-align: center;
   width: 100%;
   margin-top: 1.5rem;
   background: none;
