@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 import { api, errorMessage } from '@/lib/api';
@@ -52,6 +53,9 @@ export default function AuthForm({ next }: { next: string }) {
           onChange={update('password')}
           required
         />
+        {isLogin && (
+          <Link href="/forgot-password" className="auth-forgot">Forgot password?</Link>
+        )}
         {error && <p className="alert error" role="alert">{error}</p>}
         <button type="submit" className="btn block" style={{ marginTop: '1rem' }} disabled={submitting}>
           {submitting ? 'Please wait...' : isLogin ? 'Sign In' : 'Sign Up'}
