@@ -10,6 +10,9 @@ const schema = z.object({
   APP_ORIGIN: z.string().url().optional(),
   // Number of reverse proxies in front of the app that append to X-Forwarded-For (most hosts: 1).
   TRUSTED_PROXY_HOPS: z.coerce.number().int().min(0).max(5).default(1),
+  // Transactional email (password reset) via Resend. Development logs emails to the console instead.
+  RESEND_API_KEY: z.string().min(1).optional(),
+  MAIL_FROM: z.string().min(3).optional(),
 });
 
 let cached: z.infer<typeof schema> | undefined;

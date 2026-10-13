@@ -46,6 +46,13 @@ export const loginSchema = z.object({
   password: z.string().min(1, 'is required').max(200),
 });
 
+export const passwordResetRequestSchema = z.object({ email });
+
+export const passwordResetConfirmSchema = z.object({
+  token: z.string().min(20).max(200),
+  password,
+});
+
 export const profileSchema = z.object({
   name: trimmed(120),
   phone: optionalText(40),
